@@ -1,0 +1,39 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+    <div id="header">
+        <div id="logo-container">
+            <img src="{{ url_for('static', filename='Logo.jfif') }}" alt="Logo" id="logo">
+        </div>
+        <div id="title-container">
+            <h1>RESTAURANT RICO MENU SAC</h1>
+            <p>AV AREQUIPA N° 567 CERCADO AREQUIPA</p>
+        </div>
+        <hr>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a href="/carta_desayuno">DESAYUNOS</a></li>
+            <li><a href="/carta_menus">MENUS</a></li>
+            <li><a href="/carta_cenas">CENAS</a></li>
+            <li><a href="/estado_pedido">ESTADO PEDIDO</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="footer">
+        <p></p>
+    </div>
+</body>
+</html>
+

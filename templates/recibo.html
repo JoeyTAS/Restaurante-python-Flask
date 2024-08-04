@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recibo del Pedido</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recibo.css') }}">
+    <meta http-equiv="refresh" content="20;url=/cerrar_sesion">
+</head>
+<body>
+    <h1>Recibo del Pedido</h1>
+    <ul class="pedido-lista">
+        {% for pedido_idx in range(pedidos|length) %}
+            {% set pedido = pedidos[pedido_idx] %}
+            
+            <ul class="desayuno-lista">
+                {% for desayuno, info in pedido.items() %}
+                    <li class="desayuno-item">
+                        <span class="desayuno-nombre">{{ desayuno }}</span> - Cantidad: {{ info.cantidad }}
+                        <form action="/tracciones_pedido" method="post">
+                            <input type="hidden" name="pedido_idx" value="{{ pedido_idx }}">
+                            <input type="hidden" name="desayuno_id" value="{{ desayuno }}">
+                            <input type="number" name="cantidad_{{ desayuno }}" min="0" max="10" value="{{ info.cantidad }}" class="cantidad-input">
+                            <input type="submit" value="Actualizar Cantidad" class="actualizar-btn">
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+    
+    <p>Subtotal: S/{{ "{:.2f}".format(subtotal_pedido) }}</p>
+    <p>IGV (18%): S/{{ "{:.2f}".format(igv_pedido) }}</p>
+    <p>Total: S/{{ "{:.2f}".format(total_pedido) }}</p>
+
+
+    <form action="/cerrar_sesion" method="get">
+        <input type="submit" value="Cerrar Sesión">
+    </form>
+
+
+    <p>Cerrando sesión...</p>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 20000); // 20 segundos (20,000 milisegundos)
+    </script>
+</body>
+</html>

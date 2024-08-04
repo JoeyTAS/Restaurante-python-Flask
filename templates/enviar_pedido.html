@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>DESCRIPCION    CANTIDAD  SUBTOTAL</h3>
+    {% for desayuno, info in ultimo_pedido.items() %}
+        <ul>
+            <li>{{ desayuno }} - Cantidad: {{ info.cantidad }} - Subtotal: S/{{ "{:.2f}".format(info.subtotal) }}</li>
+        </ul>
+    {% endfor %}
+    <p>Subtotal: S/{{ "{:.2f}".format(subtotal_pedido) }}</p>
+    <p>IGV (18%): S/{{ "{:.2f}".format(igv_pedido) }}</p>
+    <p>Total: S/{{ "{:.2f}".format(total_pedido) }}</p>
+    <!-- estado_pedido.html -->
+
+    <!-- Resto del contenido -->
+    <p>Total: S/{{ "{:.2f}".format(total_pedido) }}</p>
+    
+{% endblock %}

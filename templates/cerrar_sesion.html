@@ -1,0 +1,13 @@
+<!-- cerrar_sesion.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Sesión cerrada</h1>
+    <p>Redireccionando a la página de inicio en 10 segundos...</p>
+    <script>
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 10000); // Redireccionar después de 10 segundos (10000 ms)
+    </script>
+{% endblock %}

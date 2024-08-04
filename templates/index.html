@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="form-container" id="login-form-container">
+        <h1>Iniciar Sesión</h1>
+        <form action="/login" method="post">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required><br>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required><br>
+
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+        <p>¿No tienes una cuenta? <a href="#" onclick="showSignupForm()">Crear cuenta</a></p>
+    </div>
+
+    <div class="form-container" id="signup-form-container" style="display: none;">
+        <h1>Crear Cuenta</h1>
+        <form action="/crear-cuenta" method="post">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required><br>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required><br>
+
+            <input type="submit" value="Crear Cuenta">
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Iniciar sesión</a></p>
+    </div>
+
+    <script>
+        function showLoginForm() {
+            document.getElementById("login-form-container").style.display = "block";
+            document.getElementById("signup-form-container").style.display = "none";
+        }
+
+        function showSignupForm() {
+            document.getElementById("login-form-container").style.display = "none";
+            document.getElementById("signup-form-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "nombre": "MENU CONTINENTAL",
+      "precio": 20.00
+    },
+    {
+      "id": 2,
+      "nombre": "MENU AMERICANO",
+      "precio": 18.00
+    },
+    {
+        "id": 3,
+        "nombre": "MENU  EJECUTIVO",
+        "precio": 25.00
+      }
+      
+    
+    
+  ]
+  

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    
+</head>
+<body>
+   {% extends "base.html" %}
+
+{% block content %}
+    <h2>Cenas</h2>
+    <form action="/agregar_cena_pedido" method="post">
+        {% for cena in cenas_precios %}
+            <label>
+                <input type="checkbox" name="cena_{{ cena['id'] }}" value="{{ cena['nombre'] }}"> {{ cena['nombre'] }}
+                <span>Precio: S/{{ cena['precio'] }}</span>
+            </label>
+            <input type="number" name="cantidad_{{ cena['id'] }}" min="0" max="10" value="0"> Ingrese Cantidad
+            <br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Agregar al pedido">
+    </form>
+{% endblock %}
+
+</body>
+</html>

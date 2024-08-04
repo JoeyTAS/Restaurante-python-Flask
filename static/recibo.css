@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;  
+    background: rgba(181, 176, 186, 1.0);
+    background: linear-gradient(135deg, rgba(181, 176, 186, 1.0), rgba(1, 1, 1, 1.0));
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+.pedido-lista {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.desayuno-lista {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.desayuno-item {
+    margin-bottom: 10px;
+}
+
+.desayuno-nombre {
+    font-weight: bold;
+}
+
+.cantidad-input {
+    width: 40px;
+}
+
+.actualizar-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actualizar-btn:hover {
+    background-color: #45a049;
+}
+
+form {
+    display: inline;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

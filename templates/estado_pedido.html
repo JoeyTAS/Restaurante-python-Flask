@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pedidos.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <h3>Estado del Pedido</h3>
+    <ul class="pedido-lista">
+        {% for pedido_idx in range(pedidos|length) %}
+            {% set pedido = pedidos[pedido_idx] %}
+            
+            <ul class="desayuno-lista">
+                {% for desayuno, info in pedido.items() %}
+                    <li class="desayuno-item">
+                        <span class="desayuno-nombre">{{ desayuno }}</span> - Cantidad: {{ info.cantidad }}
+                        <form action="/tracciones_pedido" method="post">
+                            <input type="hidden" name="pedido_idx" value="{{ pedido_idx }}">
+                            <input type="hidden" name="desayuno_id" value="{{ desayuno }}">
+                            <input type="number" name="cantidad_{{ desayuno }}" min="0" max="10" value="{{ info.cantidad }}" class="cantidad-input">
+                            <input type="submit" value="Actualizar Cantidad" class="actualizar-btn">
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+
+    <p class="subtotal">Subtotal: S/{{ "{:.2f}".format(subtotal_pedido) }}</p>
+    <p class="igv">IGV (18%): S/{{ "{:.2f}".format(igv_pedido) }}</p>
+    <p class="total">Total: S/{{ "{:.2f}".format(total_pedido) }}</p>
+
+    <!-- Formulario para enviar el pedido -->
+    <form action="/enviar_pedido" method="post">
+        <input type="submit" value="Enviar Pedido" class="enviar-btn">
+    </form>
+    {% endblock %}
+</body>
+</html>
+

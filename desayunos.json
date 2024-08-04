@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "DESAYUNO CONTINENTAL",
+    "precio": 20.00
+  },
+  {
+    "id": 2,
+    "nombre": "DESAYUNO AMERICANO",
+    "precio": 18.00
+  },
+  {
+      "id": 3,
+      "nombre": "DESAYUNO  EJECUTIVO",
+      "precio": 25.00
+    }
+    
+  
+  
+]

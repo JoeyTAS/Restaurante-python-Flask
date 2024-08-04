@@ -1,0 +1,96 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, rgba(181, 176, 186, 1.0), rgba(1, 1, 1, 1.0));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+#header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#logo-container {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Espacio entre el logo y el título */
+}
+
+#logo {
+    max-width: 150px; /* Ajusta el tamaño máximo del logo */
+    height: auto;
+}
+
+#title-container {
+    flex: 1;
+    text-align: left;
+}
+
+#header h1 {
+    margin: 0;
+}
+
+#header p {
+    margin: 0;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+#menu li {
+    float: left;
+}
+
+#menu li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menu li a:hover {
+    background-color: #ddd;
+}
+
+
+#content {
+    padding: 20px;
+}
+
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+    #menu {
+        text-align: center;
+    }
+
+    #menu li {
+        float: none;
+        display: inline-block;
+    }
+
+    #menu li a {
+        padding: 10px;
+    }
+}

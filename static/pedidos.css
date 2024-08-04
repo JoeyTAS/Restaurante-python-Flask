@@ -1,0 +1,102 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;  
+    background: rgba(181, 176, 186, 1.0);
+    background: linear-gradient(135deg, rgba(181, 176, 186, 1.0), rgba(1, 1, 1, 1.0));
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+.pedido-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.desayuno-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.desayuno-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.desayuno-nombre {
+    font-weight: bold;
+}
+
+.cantidad-input {
+    width: 40px;
+}
+
+.actualizar-btn {
+    margin-left: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actualizar-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos para los totales y el formulario de envío */
+.subtotal, .igv, .total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.enviar-btn {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .desayuno-item {
+        padding: 5px;
+    }
+
+    .cantidad-input {
+        width: 30px;
+    }
+
+    .enviar-btn {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pedido-lista {
+        padding: 10px;
+    }
+
+    .desayuno-item {
+        padding: 5px;
+    }
+
+    .actualizar-btn {
+        margin-left: 5px;
+    }
+}

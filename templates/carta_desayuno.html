@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='desayunos.css') }}">
+</head>
+<body>
+   {% extends "base.html" %}
+
+{% block content %}
+    <h2>Desayunos</h2>
+    <form action="/agregar_pedido" method="post">
+        {% for desayuno in desayunos_precios %}
+            <label>
+                <input type="checkbox" name="desayuno_{{ desayuno['id'] }}" value="{{ desayuno['nombre'] }}"> {{ desayuno['nombre'] }}
+                <span>Precio: S/{{ desayuno['precio'] }}</span>
+            </label>
+            <input type="number" name="cantidad_{{ desayuno['id'] }}" min="0" max="10" value="0"> Ingrese Cantidad
+            <br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Agregar al pedido">
+    </form>
+{% endblock %}
+
+
+</body>
+</html>
+
+
